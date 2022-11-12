@@ -69,7 +69,7 @@ int main(void)
 	// test_ft_memchr();
 	// test_ft_memcmp();
 	// test_ft_strnstr();
-	test_ft_atoi();
+	// test_ft_atoi();
 	// test_ft_calloc();
 	// test_ft_strdup();
 	// test_ft_substr();

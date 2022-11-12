@@ -4,19 +4,19 @@
 
 # include "../libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	size_t	i;
+// void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (i < ft_strlen(s))
-	{
-		f(i, s + i);
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (i < ft_strlen(s))
+// 	{
+// 		f(i, s + i);
+// 		i++;
+// 	}
+// }
 
-void helper_incement(unsigned int num, char *str)
+static void helper_increment(unsigned int num, char *str)
 {
 	if (num > 1)
 		*str = (*str) + 1;
@@ -28,6 +28,6 @@ void test_ft_striteri(void)
 {
 	char teststr[] = "abcd";
 
-	ft_striteri(teststr, helper_incement);
+	ft_striteri(teststr, helper_increment);
 	printf("ft_striteri: %s\n", teststr);
 }

@@ -19,7 +19,7 @@
 // 	return (new_str);
 // }
 
-char helper_incement(unsigned int num, char c)
+static char helper_increment(unsigned int num, char c)
 {
 	if (num > 1)
 		return (c + 1);
@@ -33,5 +33,5 @@ void test_ft_strmapi(void)
 
 	printf("aa\n");
 
-	printf("ft_strmapi: %s\n", ft_strmapi(teststr, helper_incement));
+	printf("ft_strmapi: %s\n", ft_strmapi(teststr, helper_increment));
 }
