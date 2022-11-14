@@ -6,7 +6,7 @@
 /*   By: cherrewi <cherrewi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/19 15:12:55 by cherrewi      #+#    #+#                 */
-/*   Updated: 2022/10/19 15:12:57 by cherrewi      ########   odam.nl         */
+/*   Updated: 2022/11/14 15:05:03 by cherrewi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	while (i < src_len && i < dstsize - 1)
 	{
-		*dst = *src;
-		dst++;
-		src++;
+		dst[i] = src[i];
 		i++;
 	}
-	*dst = 0;
+	dst[i] = '\0';
 	return (src_len);
 }
