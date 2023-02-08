@@ -45,6 +45,7 @@ void test_ft_lstdelone(void);
 void test_ft_lstclear(void);
 void test_ft_lstiter(void);
 void test_ft_lstmap(void);
+void test_ft_printf(void);
 
 #include <stdio.h>
 
@@ -92,6 +93,7 @@ int main(void)
 	// test_ft_lstclear();
 	// test_ft_lstiter();
 	// test_ft_lstmap();
+	// test_ft_printf();
 
 	return (0);
 }
