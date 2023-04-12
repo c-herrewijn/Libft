@@ -6,7 +6,7 @@
 #    By: cherrewi <cherrewi@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/19 15:14:28 by cherrewi      #+#    #+#                  #
-#    Updated: 2023/02/08 16:37:35 by cherrewi      ########   odam.nl          #
+#    Updated: 2023/04/11 13:54:22 by cherrewi      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_printf.c ft_printf_utils.c
+		ft_printf.c ft_printf_utils.c ft_isspace.c \
+		ft_printf_fd.c ft_printf_utils_fd.c
 SRCS_BONUS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 				ft_lstlast.c ft_lstadd_back.c \
 				ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
@@ -36,20 +37,20 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) -c $(FLAGS) $< -o $@
+	@$(CC) -c $(FLAGS) $< -o $@
 
 clean:
-	rm -f $(OBJS_REG) $(OBJS_BONUS)
+	@rm -f $(OBJS_REG) $(OBJS_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
 bonus: $(OBJS_BONUS) $(OBJS_REG)
-	$(MAKE) WITH_BONUS=1
+	@$(MAKE) WITH_BONUS=1
 
 .PHONY: all clean fclean re bonus
