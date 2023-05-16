@@ -6,7 +6,7 @@
 /*   By: cherrewi <cherrewi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/19 15:14:18 by cherrewi      #+#    #+#                 */
-/*   Updated: 2023/03/17 10:22:14 by cherrewi      ########   odam.nl         */
+/*   Updated: 2023/05/11 13:09:33 by cherrewi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdbool.h>
+# include <limits.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
 typedef struct s_list
 {
@@ -23,12 +29,14 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int		ft_abs(int num);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(int c);
+bool	ft_isinteger(char *int_str);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *b, size_t n);
@@ -79,5 +87,8 @@ void	printf_putunsignedhex(unsigned long long nbr,
 			int *print_len, char var_case);
 void	printf_putunsignedhex_fd(unsigned long long nbr,
 			int *print_len, char var_case, int fd);
+size_t	ft_max(size_t i, size_t j);
+size_t	ft_min(size_t i, size_t j);
+char	*get_next_line(int fd);
 
 #endif

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlen.c                                        :+:    :+:            */
+/*   ft_abs.c                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cherrewi <cherrewi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/19 15:13:03 by cherrewi      #+#    #+#                 */
-/*   Updated: 2023/05/11 13:37:47 by cherrewi      ########   odam.nl         */
+/*   Created: 2023/04/27 22:20:12 by cherrewi      #+#    #+#                 */
+/*   Updated: 2023/04/27 22:22:39 by cherrewi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_abs(int num)
 {
-	size_t	c;
-
-	if (s == NULL)
-		return (0);
-	c = 0;
-	while (*s)
+	if (num >= 0)
+		return (num);
+	else
 	{
-		s++;
-		c++;
+		if (num == INT_MIN)
+			return (num);
+		else
+			return (num * -1);
 	}
-	return (c);
 }

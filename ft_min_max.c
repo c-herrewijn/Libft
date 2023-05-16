@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlen.c                                        :+:    :+:            */
+/*   ft_min_max.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: cherrewi <cherrewi@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/19 15:13:03 by cherrewi      #+#    #+#                 */
-/*   Updated: 2023/05/11 13:37:47 by cherrewi      ########   odam.nl         */
+/*   Created: 2023/04/27 22:48:40 by cherrewi      #+#    #+#                 */
+/*   Updated: 2023/05/01 23:42:34 by cherrewi      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_max(size_t i, size_t j)
 {
-	size_t	c;
+	if (i > j)
+		return (i);
+	else
+		return (j);
+}
 
-	if (s == NULL)
-		return (0);
-	c = 0;
-	while (*s)
-	{
-		s++;
-		c++;
-	}
-	return (c);
+size_t	ft_min(size_t i, size_t j)
+{
+	if (i < j)
+		return (i);
+	else
+		return (j);
 }
